@@ -26,29 +26,45 @@ export default new Router({
             path: "/",
             name: "index",
             component: () =>
-            import(/* webpackChunkName: "index" */ "./views/index.vue"),
-            children:[{
-                path: "/",
-                name: "home",
-                component: Home
-              },{
-                path:'/cont1_1',
-                component: () =>
-                import(/* webpackChunkName: "cont1_1" */ "./views/cont1_1.vue"),
-            },{
-                path:'/cont1_2',
-                component: () =>
-                import(/* webpackChunkName: "About" */ "./views/About.vue"),
-            },
-            {
-                path:'/cont2_1',
-                component: () =>
-                import(/* webpackChunkName: "cont1_2" */ "./views/cont2_1.vue"),
-            },{
-                path:'/cont2_2',
-                component: () =>
-                import(/* webpackChunkName: "cont1_2" */ "./views/cont2_2.vue"),
-            }],
+                import ( /* webpackChunkName: "index" */ "./views/index.vue"),
+            children: [{
+                    path: "/",
+                    name: "home",
+                    component: Home,
+                    meta: {
+                        title: '首页'
+                    }
+                }, {
+                    path: '/cont1_1',
+                    meta: {
+                        title: '1_1'
+                    },
+                    component: () =>
+                        import ( /* webpackChunkName: "cont1_1" */ "./views/cont1_1.vue"),
+                }, {
+                    path: '/cont1_2',
+                    meta: {
+                        title: '1_2'
+                    },
+                    component: () =>
+                        import ( /* webpackChunkName: "About" */ "./views/About.vue"),
+                },
+                {
+                    path: '/cont2_1',
+                    meta: {
+                        title: '2_1'
+                    },
+                    component: () =>
+                        import ( /* webpackChunkName: "cont1_2" */ "./views/cont2_1.vue"),
+                }, {
+                    path: '/cont2_2',
+                    meta: {
+                        title: '2_2'
+                    },
+                    component: () =>
+                        import ( /* webpackChunkName: "cont1_2" */ "./views/cont2_2.vue"),
+                }
+            ],
         },
-    ] 
+    ]
 });

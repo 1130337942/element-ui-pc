@@ -11,6 +11,11 @@ export default {
            
         }
     },
+    watch: {
+        $route(){
+            console.log(this.$router)
+        }
+    },
     computed:{
         ...mapState(['tabArr'])
     },
