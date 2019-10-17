@@ -1,0 +1,35 @@
+const sliderData = [
+    {
+        name:'首页',
+        path:"/",
+        id:"index",
+    },
+    {
+        name:'分类1',
+        id:"aside1",
+        child:[
+            {
+                name:'选项1-1',
+                path:'/cont1_1'
+            },
+            {
+                name:'选项1-2',
+                path:'/cont1_2'
+            },
+        ]
+    },{
+        name:'分类2',
+        id:"aside2",
+        child:[
+            {
+                name:'选项2-1',
+                path:'/cont2_1'
+            },
+            {
+                name:'选项2-2',
+                path:'/cont2_2'
+            },
+        ]
+    }
+]
+export default sliderData
