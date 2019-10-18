@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--@select 被激活的-->
-        <el-menu @select="handleSelect"  class="el-menu-vertical-demo">
+        <el-menu @select="handleSelect"  class="el-menu-vertical-demo" :default-active="thisPath" unique-opened>
             <el-menu-item :index="sliderData[0].path"><i class="el-icon-message"></i>{{sliderData[0].name}}</el-menu-item>
             <el-submenu :index="item.id"  v-for="(item,i) in comSliderData" :key='i'>
                 <template slot="title"><i class="el-icon-message"></i>{{item.name}}</template>
@@ -12,11 +12,11 @@
 </template>
 <script>
 import testSliderData from '@/assets/js/testSliderData.js';
-import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
 export default {
     data(){
         return{
-            sliderData:testSliderData
+            sliderData:testSliderData,
+            thisPath:''
         }
     },
     computed:{
@@ -26,17 +26,23 @@ export default {
             })
         },
     },
+    watch:{
+        $route(){
+            this.getRouteFn()
+        }
+    },
     created(){
-        
+        this.getRouteFn()
     },
     methods: {
         handleSelect(key, keyPath) {
-            // console.log(key)
+            console.log(key)
             // console.log( keyPath);
             this.$router.push(key);
-            this.pushTabArr('npm i vue-router@3.0 -S')
         },
-        ...mapMutations(['pushTabArr'])
+        getRouteFn(){
+            this.thisPath = this.$route.path
+        }
     }
 }
 </script>

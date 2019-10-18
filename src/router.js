@@ -28,23 +28,23 @@ export default new Router({
             component: () =>
                 import ( /* webpackChunkName: "index" */ "./views/index.vue"),
             children: [{
-                    path: "/",
+                    path: "",
                     name: "home",
                     component: Home,
                     meta: {
-                        title: '首页'
+                        name: '首页'
                     }
                 }, {
                     path: '/cont1_1',
                     meta: {
-                        title: '1_1'
+                        name: '1_1'
                     },
                     component: () =>
                         import ( /* webpackChunkName: "cont1_1" */ "./views/cont1_1.vue"),
                 }, {
                     path: '/cont1_2',
                     meta: {
-                        title: '1_2'
+                        name: '1_2'
                     },
                     component: () =>
                         import ( /* webpackChunkName: "About" */ "./views/About.vue"),
@@ -52,14 +52,14 @@ export default new Router({
                 {
                     path: '/cont2_1',
                     meta: {
-                        title: '2_1'
+                        name: '2_1'
                     },
                     component: () =>
                         import ( /* webpackChunkName: "cont1_2" */ "./views/cont2_1.vue"),
                 }, {
                     path: '/cont2_2',
                     meta: {
-                        title: '2_2'
+                        name: '2_2'
                     },
                     component: () =>
                         import ( /* webpackChunkName: "cont1_2" */ "./views/cont2_2.vue"),
