@@ -1,5 +1,15 @@
 <template>
     <div>
-        我是cont2_2
+        这是分类2-2
     </div>
 </template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>

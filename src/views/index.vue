@@ -28,14 +28,14 @@
             HeaderEl,
             AsideEl
         },
-        computed:{
+        // computed:{
             
-        },
-        created(){
+        // },
+        // created(){
             
-        },
-        methods:{
-        }
+        // },
+        // methods:{
+        // }
        
     }
 </script>
